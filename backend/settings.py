@@ -15,30 +15,6 @@ USE_I18N = True
 USE_L10N = True
 USE_TZ = True
 
-INSTALLED_APPS = [
-    'django.contrib.admin',
-    'django.contrib.sites',
-    'django.contrib.auth',
-    'django.contrib.contenttypes',
-    'django.contrib.sessions',
-    'django.contrib.messages',
-    'django.contrib.staticfiles',
-    'django.contrib.gis',
-    'rest_framework',
-    'django_filters',
-    'backend',
-    'apps.pages',
-    'apps.auth_api',
-    'pagedown',
-    'tagulous',
-    'mptt',
-    'draceditor',
-    'allauth',
-    'allauth.account',
-    'allauth.socialaccount',
-    'allauth.socialaccount.providers.vk',
-    'steem',
-]
 
 AUTH_USER_MODEL = 'auth_api.User'
 
