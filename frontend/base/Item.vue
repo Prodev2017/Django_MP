@@ -65,7 +65,27 @@ export default {
         }
       },
       //REFACTOR THIS! move to separate file
-     
+      cyrLat:function (val) {
+        //Если с английского на русский, то передаём вторым параметром true.
+        var transliterate = (
+          function() {
+            var
+              rus = "щ    ш  ч  ц  й  ё  э  ю  я  х  ж  а б в г д е з и к л м н о п р с т у ф ъ  ы ь".split(/ +/g),
+              eng = "shch sh ch cz ij yo ye yu ya kh zh a b v g d e z i k l m n o p r s t u f xx y x".split(/ +/g)
+            ;
+            return function(text, engToRus) {
+              var x;
+              for(x = 0; x < rus.length; x++) {
+                text = text.split(engToRus ? eng[x] : rus[x]).join(engToRus ? rus[x] : eng[x]);
+                text = text.split(engToRus ? eng[x].toUpperCase() : rus[x].toUpperCase()).join(engToRus ? rus[x].toUpperCase() : eng[x].toUpperCase());
+              }
+              return text;
+            }
+          }
+        )();
+
+        return transliterate(val)
+      },
       isCyr:function(val){
         return /[а-яА-ЯЁё]/.test(val)
       },
@@ -110,20 +130,6 @@ export default {
 </script>
 
 <style>
-/*TRANSITIONS*/
-.fade-enter-active, .fade-leave-active {
-  transition: opacity .5s
-}
-.fade-enter, .fade-leave-to /* .fade-leave-active in <2.1.8 */ {
-  opacity: 0
-}
-
-.slide-fade-enter-active {
-  transition: all .3s ease;
-}
-.slide-fade-leave-active {
-  transition: all .8s cubic-bezier(1.0, 0.5, 0.8, 1.0);
-}
 li{
   list-style: none;
   vertical-align: top;
@@ -141,6 +147,20 @@ a{
 
 }
 
+/*TRANSITIONS*/
+.fade-enter-active, .fade-leave-active {
+  transition: opacity .5s
+}
+.fade-enter, .fade-leave-to /* .fade-leave-active in <2.1.8 */ {
+  opacity: 0
+}
+
+.slide-fade-enter-active {
+  transition: all .3s ease;
+}
+.slide-fade-leave-active {
+  transition: all .8s cubic-bezier(1.0, 0.5, 0.8, 1.0);
+}
 .slide-fade-enter, .slide-fade-leave-to
 /* .slide-fade-leave-active for <2.1.8 */ {
   transform: translateX(10px);
