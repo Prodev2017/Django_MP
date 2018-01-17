@@ -127,40 +127,7 @@ import {
 .el-dropdown{
     cursor: pointer;
 }
-.top{
-  position: fixed;
-  top: 0;
-  display: table;
-  z-index: 12;
-  width: 100%;
-  color: #f6f7f7;
 
-  background-color: #495565;
-  border-bottom: #080808;
-  padding: 8px 0px 5px 0px;
-
-  .avatar{
-    width: 25px;
-    height: 25px;
-    border-radius: 25px;
-  }
-
-  .login-box{
-    display: inline-block;
-    float: left;
-    width: 25%;
-    color: #fff;
-
-  }
-  .top-nav{
-    display: inline-block;
-    width: 75%;
-    float: left;
-    .ele{
-      font-weight: normal;
-    }
-  }
-}
 
 .top .logo-wrap{
   padding: 1px 10px;
