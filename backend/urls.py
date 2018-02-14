@@ -32,4 +32,13 @@ if settings.DEBUG:
             'document_root': settings.MEDIA_ROOT})
     )
 
+urlpatterns += [
+    url(r'^admin/', admin.site.urls),
+    url(r'^api-auth/', obtain_jwt_token),
+    url(r'^post_image/', page_views.post_image),
+    url(r'^sign-up/', auth_views.RegisterView.as_view()),
+    url(r'^api/', include(router.urls)),
 
+    # Vue on frontend
+    url(r'^', TemplateView.as_view(template_name='base.html'))
+]

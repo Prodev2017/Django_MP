@@ -31,7 +31,18 @@
 	width: 50%;
 }
 
-
+.tab_headers .tab_header{
+	height: 65px;
+	font-weight: 700;
+	background-color: #edeef3;
+	opacity: 0.74;
+	line-height: 65px;
+	font-size: 18px;
+	letter-spacing: -0.3px;
+	color: #929292;
+	text-align: center;
+	cursor: pointer;
+}
 
 .tab_headers .tab_header.active{
 	background: #ffffff;
@@ -61,18 +72,7 @@
 		font-size: 16px;
 		opacity: 0.87;
 }
-.tab_headers .tab_header{
-	height: 65px;
-	font-weight: 700;
-	background-color: #edeef3;
-	opacity: 0.74;
-	line-height: 65px;
-	font-size: 18px;
-	letter-spacing: -0.3px;
-	color: #929292;
-	text-align: center;
-	cursor: pointer;
-}
+
 .login-form .inpt:focus{
 	 box-shadow: 0 0 2px 0 #6d9ee1;
 	 outline: 0;
